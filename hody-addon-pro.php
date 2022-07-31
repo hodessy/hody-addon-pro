@@ -1,6 +1,6 @@
 <?php 
 /*
-Plugin Name: Hody Addon pro
+Plugin Name: Hody Addon Pro
 Plugin URI: https://hodessy.com/addon-pro
 Description: Plugin adds custom blocks and advanced features to Hody Themes
 Version: 0.0.1
