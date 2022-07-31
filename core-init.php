@@ -85,13 +85,13 @@ if ( file_exists( HODY_CORE_INC . 'hody-shortcodes.php' ) ) {
 }
 
 // Filters.
-if ( file_exists( HODY_CORE_INC_ALT . 'filters.php' ) ) {
-	require_once HODY_CORE_INC_ALT . 'filters.php';
+if ( file_exists( HODY_CORE_INC_ALT . '/filters.php' ) ) {
+	require_once HODY_CORE_INC_ALT . '/filters.php';
 }
 
 // Block variation .
-if ( file_exists( HODY_CORE_INC_ALT . 'register-block-variations.php' ) ) {
-	require_once HODY_CORE_INC_ALT . 'register-block-variations.php';
+if ( file_exists( HODY_CORE_INC_ALT . '/register-block-variations.php' ) ) {
+	require_once HODY_CORE_INC_ALT . '/register-block-variations.php';
 }
 // Block style .
 if ( file_exists( HODY_CORE_INC_ALT . '/register-block-styles.php' ) ) {
@@ -100,6 +100,6 @@ if ( file_exists( HODY_CORE_INC_ALT . '/register-block-styles.php' ) ) {
 
 //include_once  __DIR__ . '/inc/register-block-styles.php';
 // Block pattern and block category.
-if ( file_exists( HODY_CORE_INC_ALT . 'register-block-patterns.php' ) ) {
-	require_once HODY_CORE_INC_ALT . 'register-block-patterns.php';
+if ( file_exists( HODY_CORE_INC_ALT . '/register-block-patterns.php' ) ) {
+	require_once HODY_CORE_INC_ALT . '/register-block-patterns.php';
 }

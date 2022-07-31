@@ -50,9 +50,9 @@ CSS Filters
     filter: sepia(100%);
 }
 
-.shadow {
-    -webkit-filter: drop-shadow(8px 8px 10px green);
-    filter: drop-shadow(8px 8px 10px green);
+.has-style-negative-5rem-margin-top {
+    margin-top: -3rem !important;
+    z-index: 10 !important;
 }
 /*---------------------------
 Transition Classes
@@ -89,7 +89,9 @@ Large Tablet Screens
 Medium Tablet Screens 
 */
 @media only screen and (max-width: 768px) {
-
+    .has-style-negative-5rem-margin-top {
+        margin-top: 0 !important;
+    }
 }
 /*
 Small Tablet/Largest Phone Screens 

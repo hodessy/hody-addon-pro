@@ -3,6 +3,7 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;;
     height: 100%;
+    max-height: 65vh;
   }
   
   .is-style-hody-addon-hero-grid-gallery .wp-block-image:nth-child(1) {

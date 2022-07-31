@@ -28,7 +28,7 @@ function hody_addon_core_register_block_styles() {
 		'core/button',
 		array(
 			'name'  => 'hody-addon-flat-button-with-icon',
-			'label' => __( 'With Icon', 'hody-addon' ),
+			'label' => __( '→ Icon', 'hody-addon' ),
 		)
 	);
 
