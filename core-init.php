@@ -10,11 +10,14 @@
 if ( ! defined( 'WPINC' ) ) {die;} // end if
 // Define Our Constants
 define( 'HODY_CORE_INC_ALT', __DIR__ .'/inc' );
+define( 'HODY_CORE_VENDORS', __DIR__ .'/vendor' );
 define( 'HODY_CORE_INC',dirname( __FILE__ ).'inc/' );
 define( 'HODY_CORE_IMG',plugins_url( 'assets/img/', __FILE__ ) );
 define( 'HODY_CORE_CSS',plugins_url( '/assets/css/', __FILE__ ) );
 define( 'HODY_CORE_JS',plugins_url( 'assets/js/', __FILE__ ) );
 $baseDIR = trailingslashit( dirname( plugin_basename( __FILE__ ) ) ) . '/';
+
+
 /*
 *
 *  Register CSS
@@ -42,7 +45,7 @@ function hody_core_style_setup() {
 	 * Load additional block styles.
 	 * See details on how to add more styles in the readme.txt.
 	 */
-	$styled_blocks = [ 'button', 'gallery', 'quote', 'search' ];
+	$styled_blocks = [ 'button', 'gallery' ];
 	foreach ( $styled_blocks as $block_name ) {
 		$args = array(
 			'handle' => "hody-core-$block_name",
@@ -103,3 +106,74 @@ if ( file_exists( HODY_CORE_INC_ALT . '/register-block-styles.php' ) ) {
 if ( file_exists( HODY_CORE_INC_ALT . '/register-block-patterns.php' ) ) {
 	require_once HODY_CORE_INC_ALT . '/register-block-patterns.php';
 }
+if ( file_exists( HODY_CORE_INC_ALT . '/patterns.php' ) ) {
+	require_once HODY_CORE_INC_ALT . '/patterns.php';
+}
+/*
+if ( file_exists( HODY_CORE_VENDORS . '/genesis-custom-blocks/genesis-custom-blocks.php' ) ) {
+	require_once HODY_CORE_VENDORS . '/genesis-custom-blocks/genesis-custom-blocks.php';
+}*/
+// Genesis Blocks Config
+// add_filter( 'genesis_custom_blocks_show_pro_nag', '__return_false' );
+
+/**
+ * Define and import vendors
+ *  ### Vendor List and Existing Versions ###
+ *  Lazy Block by nK (https://wordpress.org/plugins/lazy-blocks/) V 2.3.4 
+ * 	Metabox, by metabox.io (none yet)
+ */
+// Define path and URL to the LZB plugin.
+define( 'HODYADDON_LZB_PATH', HODY_CORE_VENDORS . '/lzb/lazy-blocks/' );
+//define( 'HODYADDON_LZB_URL', HODY_CORE_VENDORS . '/lzb/lazy-blocks/' );
+//define( 'HODYADDON_LZB_URL', __DIR__ .'/vendor/lzb/lazy-blocks/' );
+define( 'HODYADDON_LZB_URL',plugins_url( 'vendor/lzb/lazy-blocks/', __FILE__ ) );
+// Include the LZB plugin.
+//require_once HODYADDON_LZB_PATH . 'lazy-blocks.php';
+if ( file_exists( HODYADDON_LZB_PATH . 'lazy-blocks.php' ) ) {
+	require_once HODYADDON_LZB_PATH . 'lazy-blocks.php';
+}
+
+// Hide menu item
+add_filter( 'lzb/show_admin_menu', '__return_false' );
+
+// Customize the url setting to fix incorrect asset URLs.
+
+add_filter( 'lzb/plugin_url', 'hodyaddon_lzb_url' );
+function hodyaddon_lzb_url( $url ) {
+return HODYADDON_LZB_URL;
+}
+
+//Initiate a list of custom blocks
+if ( file_exists( HODY_CORE_INC_ALT . '/hody-lazyblocks.php' ) ) {
+	require_once HODY_CORE_INC_ALT . '/hody-lazyblocks.php';
+}
+
+
+// Find template in another directory
+$customBlockName = array(
+	'bootstrap-alert',
+);
+define( 'HODYADDON_BLOCK_DIR', __DIR__ .'/blocks' );
+function hodyaddon_lzb_block_render_include_template( $template, $attributes, $block, $context ) {
+    // Custom template for block "lazyblock/my-custom-block"
+    return 'blocks/' . $customBlockName . '/block.php' ;
+}
+
+add_filter( 'lazyblock/' . $customBlockName . '/include_template', 'hodyaddon_lzb_block_render_include_template', 10, 4 );
+
+
+/**
+* Gets an alternate template path.
+*
+* @param string $path The template path.
+* @return string An alternate template path.
+*/
+/*
+function hodyaddon_alternate_gcb_template_path( $path ) {
+	unset( $path );
+	return __DIR__;
+	}
+	
+	add_filter( 'genesis_custom_blocks_template_path', 'hodyaddon_alternate_gcb_template_path' );
+
+*/
