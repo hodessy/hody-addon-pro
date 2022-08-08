@@ -1,0 +1,61 @@
+/*
+Styles for Team Block (lazyblock)
+*/
+
+.hody-team-content {
+    display: block;
+}
+.hody-team-social-icons {
+display: flex;
+gap: var( --wp--style--block-gap, 0.5em );
+flex-wrap: wrap;
+align-items: center;
+}
+
+.hody-addon-svg {
+    color: currentColor;
+}
+
+.hody-team-social-icons .hody-addon-social-link span:not(.screen-reader-text) {
+    margin-left: .5em;
+    margin-right: .5em;
+    font-size: .65em;
+}
+.hody-team-social-icons {
+    padding-left: 0;
+    padding-right: 0;
+    text-indent: 0;
+    margin-left: 0;
+    background: none;
+}
+.hody-team-content {
+    min-height: 400px;
+}
+.hody-team-profile-image-card:before {
+position: absolute;
+content: "";
+top: 100%;
+left: 0;
+height: 100%;
+width: 100%;
+background-color: rgba(0,0,0,.7);
+-webkit-transition: all .4s ease .2s;
+transition: all .4s ease .2s;
+z-index: 1;
+-webkit-backface-visibility: hidden;
+backface-visibility: hidden;
+opacity: 0;
+visibility: hidden;
+} 
+.hody-team-content-hover-body {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-20%);
+    transform: translateY(-20%);
+    z-index: 2;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+}

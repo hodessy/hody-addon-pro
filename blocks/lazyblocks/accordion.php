@@ -1,5 +1,9 @@
 <?php
 /**
+ * File to list all hody addon custom clocks powered by LAZY Blocks plugin
+ */
+
+/**
  * Accordion Block
  *
  * @var  array  $attributes Block attributes.

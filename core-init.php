@@ -16,6 +16,7 @@ define( 'HODY_CORE_IMG',plugins_url( 'assets/img/', __FILE__ ) );
 define( 'HODY_CORE_CSS',plugins_url( '/assets/css/', __FILE__ ) );
 define( 'HODY_CORE_JS',plugins_url( 'assets/js/', __FILE__ ) );
 $baseDIR = trailingslashit( dirname( plugin_basename( __FILE__ ) ) ) . '/';
+define( 'HODY_CORE_BLOCK_ALT', __DIR__ .'/blocks' );
 
 
 /*

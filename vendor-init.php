@@ -45,11 +45,27 @@ if ( file_exists( '/wp-content/plugins/lazy-blocks/lazy-blocks.php' ) ) {
 	//add_filter( 'lzb/show_admin_menu', '__return_false' );
 };
 
-
+/*
 // Method 1
 function hody_lzb_block_render_include_template( $template, $attributes, $block, $context ) {
     // Custom template for all blocks
-   return( plugin_dir_path( __FILE__ ) . 'blocks/lazyblock-templates.php' );
+   return ( plugin_dir_path( __FILE__ ) . 'blocks/lazyblock-templates.php' );
 }
 
 add_filter( 'lzb/block_render/include_template', 'hody_lzb_block_render_include_template', 10, 4 );
+*/
+
+// Method 
+function accordion_hody_lzb_block_render_include_template( $template, $attributes, $block, $context ) {
+    // Custom template for all blocks
+   return ( plugin_dir_path( __FILE__ ) . 'blocks/lazyblocks/accordion.php' );
+}
+
+add_filter( 'lazyblock/accordion/include_template', 'accordion_hody_lzb_block_render_include_template', 10, 4 );
+
+function team_hody_lzb_block_render_include_template( $template, $attributes, $block, $context ) {
+  // Custom template for all blocks
+ return ( plugin_dir_path( __FILE__ ) . 'blocks/lazyblocks/team.php' );
+}
+
+add_filter( 'lazyblock/team/include_template', 'team_hody_lzb_block_render_include_template', 10, 4 );
