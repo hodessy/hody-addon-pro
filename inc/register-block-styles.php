@@ -32,14 +32,45 @@ function hody_addon_core_register_block_styles() {
 		)
 	);
 
+	register_block_style( // phpcs:ignore WPThemeReview.PluginTerritory.ForbiddenFunctions.editor_blocks_register_block_style
+		'core/button',
+		array(
+			'name'  => 'hodyaddon-text-button-link',
+			'label' => __( 'Text Link', 'hody-addon' ),
+		)
+	);
+
+
 	register_block_style(
 		'core/gallery',
 		array(
 			'name' => 'hody-addon-hero-grid-gallery',
 			'label' => __('Hero Grid 1', 'hody-addon')
 		)
+	);
 
+	register_block_style(
+		'core/image',
+		array(
+			'name' => 'hodyaddon-icon-image',
+			'label' => __('Icon Image', 'hody-addon')
+		)
+	);
 
+	register_block_style(
+		'core/image',
+		array(
+			'name' => 'hodyaddon-icon-image-overlap',
+			'label' => __('Icon Overlap', 'hody-addon')
+		)
+	);
+
+	register_block_style(
+		'core/group',
+		array(
+			'name' => 'hodyaddon-group-box-shadow',
+			'label' => __('Has Box Shadow', 'hody-addon')
+		)
 	);
 
 

@@ -1,0 +1,21 @@
+/*  Button Style in Editor*/
+.editor-styles-wrapper .is-style-hodyaddon-text-button-link div {
+    background-color: transparent;
+    color: var(--wp--preset--color--primary);
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-decoration-thickness: 0.3em;
+}
+
+.is-style-hody-addon-flat-button-with-icon div {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+  }
+.is-style-hody-addon-flat-button-with-icon div::after {
+    content: '→';
+}

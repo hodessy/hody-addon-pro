@@ -1,1 +1,1 @@
-.is-style-hody-addon-flat-button-with-icon a{justify-content:space-between;display:flex}.is-style-hody-addon-flat-button-with-icon a::after{content:'→'}
+.is-style-hody-addon-flat-button-with-icon a{display:flex;gap:1em;align-items:center}.is-style-hody-addon-flat-button-with-icon a::after{content:'→'}

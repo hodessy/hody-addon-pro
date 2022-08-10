@@ -46,6 +46,9 @@ function hodyaddon_register_block_patterns() {
 
 	$block_patterns = array(
 		'cta-slim',
+		'team-grid-style-one',
+		'service-column-style-one',
+		'service-grid-style-one',
 	);
 
 	/**

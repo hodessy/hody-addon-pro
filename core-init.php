@@ -25,8 +25,8 @@ define( 'HODY_CORE_BLOCK_ALT', __DIR__ .'/blocks' );
 *
 */
 function hody_register_core_css(){
-wp_enqueue_style('hody-core', HODY_CORE_CSS . 'hody-core.css',null,time(),'all');
-//wp_enqueue_style('hody-blocks', HODY_CORE_CSS . 'lazyblock.min.css',null,time(),'all');
+wp_enqueue_style('hody-core', HODY_CORE_CSS . 'hody-core.min.css',null,time(),'all');
+wp_enqueue_style('hody-animations', HODY_CORE_CSS . 'animate.min.css',null,time(),'all');
 };
 add_action( 'wp_enqueue_scripts', 'hody_register_core_css' );   
 
@@ -48,7 +48,8 @@ add_action( 'after_setup_theme', 'hody_core_style_setup' );
 function hody_core_style_setup() {
 	//add_theme_support( 'wp-block-styles' );
 	//add_editor_style( './assets/css/style-shared.min.css' );
-	//add_editor_style( HODY_CORE_CSS, 'lazyblocks.min.css');
+	//add_editor_style( HODY_CORE_CSS, 'hodyaddon-editor.min.css');
+	//enqueue_block_assets( HODY_CORE_CSS, 'hodyaddon-shared.css' );
 
 	
     /*
@@ -67,6 +68,21 @@ function hody_core_style_setup() {
 	}
 
 }
+/**
+ * Add style for both front and back end for Custom Blocks, styles and variations
+ */
+function hodyaddon_block_styles() {
+    wp_enqueue_style( 'hodystyle', plugins_url('assets/css/hodyaddon-shared.min.css', __FILE__ ));
+    //wp_enqueue_script( 'testimonial',  get_stylesheet_directory_uri() . '/template-parts/blocks/testimonial/testimonial.js' );
+}
+add_action( 'enqueue_block_assets', 'hodyaddon_block_styles' );
+
+/**
+ * Add style for Custom blocks and block styles in editor 
+ */
+add_action( 'enqueue_block_editor_assets', function() {
+    wp_enqueue_style( 'hoddyaddon-editorstyles', HODY_CORE_CSS . 'hodyaddon-editor.min.css',null,time(),'all' );
+} );
 
 
 /**
