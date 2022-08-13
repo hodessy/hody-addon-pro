@@ -63,9 +63,22 @@ function accordion_hody_lzb_block_render_include_template( $template, $attribute
 
 add_filter( 'lazyblock/accordion/include_template', 'accordion_hody_lzb_block_render_include_template', 10, 4 );
 
+/**
+ * Team Block
+ */
 function team_hody_lzb_block_render_include_template( $template, $attributes, $block, $context ) {
   // Custom template for all blocks
  return ( plugin_dir_path( __FILE__ ) . 'blocks/lazyblocks/team.php' );
 }
 
 add_filter( 'lazyblock/team/include_template', 'team_hody_lzb_block_render_include_template', 10, 4 );
+
+/**
+ * Video Lighbox: Play block
+ */
+function video_lightbox_hody_lzb_block_render_include_template( $template, $attributes, $block, $context ) {
+  // Custom template for all blocks
+ return ( plugin_dir_path( __FILE__ ) . 'blocks/lazyblocks/videolightbox.php' );
+}
+
+add_filter( 'lazyblock/video-lightbox/include_template', 'video_lightbox_hody_lzb_block_render_include_template', 10, 4 );

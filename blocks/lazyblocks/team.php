@@ -33,7 +33,7 @@ $teamBorderRadius = $attributes['team-border-radius'];
 }
 
 </style>
-<div style="border-radius: <?php echo $teamBorderRadius;?>;" class="hoddy-addon-block <?php echo $attributes['blockUniqueClass']?>">
+<div style="border-radius: <?php echo $teamBorderRadius;?>;" class="hoddy-addon-team-block <?php echo $attributes['blockUniqueClass']?>">
 <div class="hody-team-content hody-team-profile-image-card">
     <?php if(isset($attributes['team-member-image']['url'])): ?>
 <img class="hody-addon-team-image" src="<?php echo esc_url($attributes['team-member-image']['url']);?>" title="" alt="<?php echo esc_attr($attributes['team-member-image']['alt'])?>">

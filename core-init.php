@@ -115,6 +115,8 @@ function hody_lazyblock_style_setup() {
 function hody_register_core_js(){
 // Register Core Plugin JS	
 wp_enqueue_script('hody-core', HODY_CORE_JS . 'hody-core.js','jquery',time(),true);
+wp_enqueue_script('basicvlb', HODY_CORE_JS . 'basicLightbox.min.js','jquery',time(),true);
+
 };
 add_action( 'wp_enqueue_scripts', 'hody_register_core_js' );    
 
