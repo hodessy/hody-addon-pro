@@ -6,9 +6,7 @@
     padding-right: 0px;
     padding-bottom: 0px;
     padding-left: 0px;
-    text-decoration: underline;
-    text-decoration-style: solid;
-    text-decoration-thickness: 0.3em;
+    border-bottom: 0.3em solid;
 }
 
 .is-style-hody-addon-flat-button-with-icon div {
