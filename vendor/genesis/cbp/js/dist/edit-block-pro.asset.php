@@ -1,0 +1,1 @@
+<?php return array('dependencies' => array('react', 'wp-data', 'wp-element', 'wp-format-library', 'wp-hooks'), 'version' => '760f2b120bfe03b0498aeef0ee75ed42');
