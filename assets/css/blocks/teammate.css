@@ -63,7 +63,7 @@ visibility: hidden;
 overflow: hidden;
 } 
 
-.hoddy-addon-team-block:hover 
+.hody-teammate__modern:hover 
 .hody-team-profile-image-card:before {
     opacity: 1;
     visibility: visible;
@@ -91,7 +91,7 @@ overflow: hidden;
     text-align: center;
 }
 
-.hoddy-addon-team-block .hody-team-profile-image-card>img {
+.hody-teammate__modern .hody-team-profile-image-card>img, .hody-teammate__default>img {
     margin-left: auto;
     margin-right: auto;
     border-radius: inherit;
@@ -113,7 +113,7 @@ overflow: hidden;
     box-shadow: 4px 12px 12px 2px #22222224;
     border-radius: inherit;
 }
-.hoddy-addon-team-block:hover .hody-team-content-hover-body {
+.hody-teammate__modern:hover .hody-team-content-hover-body {
     opacity: 1;
     visibility: visible;
     animation: fadeInUp; /* referring directly to the animation's @keyframe declaration */
@@ -122,4 +122,18 @@ overflow: hidden;
 .hody-addon-svg svg {
     height: 1.25em;
     width: 1.25em;   
+}
+
+/* Style for Default View */
+.hody-teammate__default>div {
+    position: relative;
+    margin: -25% 40px 0;
+    /* background-color: #f7f7f7; */
+    padding: 32px 20px 40px;
+    /* border-radius: 5px; */
+    box-shadow: 0 10px 30px 0 rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
